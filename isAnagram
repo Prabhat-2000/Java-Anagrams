@@ -1,0 +1,17 @@
+static boolean isAnagram(String a, String b) {
+        // Complete the function\
+       if(a.length() == b.length()){
+            StringBuilder aB = new StringBuilder(a.toLowerCase());
+            StringBuilder bB = new StringBuilder(b.toLowerCase());
+            while(aB.length() != 0){
+                String value = String.valueOf(aB.charAt(0));
+                aB.deleteCharAt(0);
+                int indexInOtherString = bB.indexOf(value);
+                if(indexInOtherString == -1) return false;
+                else bB.deleteCharAt(indexInOtherString);
+            }
+            return true;
+        }
+        return false;
+    }
+
